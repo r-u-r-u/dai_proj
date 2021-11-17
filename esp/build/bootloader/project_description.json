@@ -1,0 +1,21 @@
+{
+    "project_name":       "bootloader",
+    "project_path":       "/home/wako/workspace/esp_ws/esp-idf/components/bootloader/subproject",
+    "build_dir":          "/home/wako/workspace/esp_ws/SPI_test/build/bootloader",
+    "config_file":        "/home/wako/workspace/esp_ws/SPI_test/sdkconfig",
+    "config_defaults":    "",
+    "app_elf":            "bootloader.elf",
+    "app_bin":            "bootloader.bin",
+    "git_revision":       "v5.0-dev-178-g417ef24b06",
+    "target":             "esp32",
+    "rev":                "0",
+    "phy_data_partition": "",
+    "monitor_baud" :      "115200",
+    "monitor_toolprefix": "xtensa-esp32-elf-",
+    "config_environment" : {
+        "COMPONENT_KCONFIGS" : "/home/wako/workspace/esp_ws/esp-idf/components/efuse/Kconfig;/home/wako/workspace/esp_ws/esp-idf/components/esp32/Kconfig;/home/wako/workspace/esp_ws/esp-idf/components/esp_common/Kconfig;/home/wako/workspace/esp_ws/esp-idf/components/esp_hw_support/Kconfig;/home/wako/workspace/esp_ws/esp-idf/components/esp_system/Kconfig;/home/wako/workspace/esp_ws/esp-idf/components/freertos/Kconfig;/home/wako/workspace/esp_ws/esp-idf/components/hal/Kconfig;/home/wako/workspace/esp_ws/esp-idf/components/log/Kconfig;/home/wako/workspace/esp_ws/esp-idf/components/newlib/Kconfig;/home/wako/workspace/esp_ws/esp-idf/components/spi_flash/Kconfig",
+        "COMPONENT_KCONFIGS_PROJBUILD" : "/home/wako/workspace/esp_ws/esp-idf/components/bootloader/Kconfig.projbuild;/home/wako/workspace/esp_ws/esp-idf/components/esp_rom/Kconfig.projbuild;/home/wako/workspace/esp_ws/esp-idf/components/esptool_py/Kconfig.projbuild;/home/wako/workspace/esp_ws/esp-idf/components/partition_table/Kconfig.projbuild"
+    },
+    "build_components" : [ "bootloader", "bootloader_support", "efuse", "esp32", "esp_common", "esp_hw_support", "esp_rom", "esp_system", "esptool_py", "freertos", "hal", "log", "main", "micro-ecc", "newlib", "partition_table", "soc", "spi_flash", "xtensa", "" ],
+    "build_component_paths" : [ "/home/wako/workspace/esp_ws/esp-idf/components/bootloader", "/home/wako/workspace/esp_ws/esp-idf/components/bootloader_support", "/home/wako/workspace/esp_ws/esp-idf/components/efuse", "/home/wako/workspace/esp_ws/esp-idf/components/esp32", "/home/wako/workspace/esp_ws/esp-idf/components/esp_common", "/home/wako/workspace/esp_ws/esp-idf/components/esp_hw_support", "/home/wako/workspace/esp_ws/esp-idf/components/esp_rom", "/home/wako/workspace/esp_ws/esp-idf/components/esp_system", "/home/wako/workspace/esp_ws/esp-idf/components/esptool_py", "/home/wako/workspace/esp_ws/esp-idf/components/freertos", "/home/wako/workspace/esp_ws/esp-idf/components/hal", "/home/wako/workspace/esp_ws/esp-idf/components/log", "/home/wako/workspace/esp_ws/esp-idf/components/bootloader/subproject/main", "/home/wako/workspace/esp_ws/esp-idf/components/bootloader/subproject/components/micro-ecc", "/home/wako/workspace/esp_ws/esp-idf/components/newlib", "/home/wako/workspace/esp_ws/esp-idf/components/partition_table", "/home/wako/workspace/esp_ws/esp-idf/components/soc", "/home/wako/workspace/esp_ws/esp-idf/components/spi_flash", "/home/wako/workspace/esp_ws/esp-idf/components/xtensa", "" ]
+}
