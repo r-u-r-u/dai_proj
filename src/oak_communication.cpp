@@ -2,45 +2,12 @@
 #include "ros/ros.h"
 #include "depthai/depthai.hpp"
 
-namespace dai{
-    struct RawServoControl :public RawBuffer{
-        enum class mode:uint8_t{
-        A=0x01,
-        B=0x02,  
-        };
-    };
-    class ServoControl :public Buffer{
-        std::shared_ptr<dai::RawBuffer> serialize() const override;
-    public:
-        ServoControl();
-        explicit ServoControl(std::shared_ptr<dai::RawServoControl> ptr);
-        virtual ~ServoControl() = default;
 
-        void setAngle();
-        void setReachTime();
-        void setMode();
-    };
-    std::shared_ptr<dai::RawBuffer> ServoControl::serialize() const {
-        return raw;
-    }
-    ServoControl::ServoControl():
-        Buffer(std::make_shared<RawServoControl>()){}
-    ServoControl::ServoControl(std::shared_ptr<dai::RawServoControl> ptr):
-        Buffer(std::move(ptr)){}
+int main(int argc, char *argv[]){
+    ros::init(argc,argv,"oak_communication");
+    ros::NodeHandle nh;
+    ros::Rate loop_rate(10);
 
-    void ServoControl::setAngle(){
-        
-    };
-    void ServoControl::setReachTime(){
-
-    };
-    void ServoControl::setMode(){
-        
-    };
-}
-
-
-dai::Pipeline createPipeline(){
     dai::Pipeline pipeline;
     auto xLinkIn = pipeline.create<dai::node::XLinkIn>();
     auto xLinkOut = pipeline.create<dai::node::XLinkOut>();
@@ -55,15 +22,7 @@ dai::Pipeline createPipeline(){
 
     xLinkIn->out.link(xLinkOut->input);
     xLinkIn->out.link(xSPIOut->input);
-    return pipeline;
-}
-
-int main(int argc, char *argv[]){
-    ros::init(argc,argv,"oak_communication");
-    ros::NodeHandle nh;
-    ros::Rate loop_rate(10);
-
-    dai::Pipeline pipeline = createPipeline();
+    
     dai::Device device(pipeline);
 
     std::shared_ptr<dai::DataInputQueue> xInQueue = device.getInputQueue("input_stream");
@@ -71,7 +30,7 @@ int main(int argc, char *argv[]){
     
     uint16_t angle = 0;
     uint16_t reachTime = 10;
-    
+    std::cout<<pipeline.getConnections().size()<<std::endl;
     while(ros::ok()){
         if(angle>1000)
             angle=0;
